@@ -1,0 +1,13 @@
+{
+  "name": "file-sizing",
+  "version": "1.0.0",
+  "description": "Give this a file and it will return the size in bytes.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Mateo Pool",
+  "dependencies": {
+    "express": "~3.2.4",
+    "path": "~0.12.7",
+    "multer": "~1.2.0"
+  }
+}

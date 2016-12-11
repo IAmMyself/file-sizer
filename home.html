@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>File Metadata Microservice</title>
+	</head>
+
+	<body>
+		<p>Give us a file and we will return the size in bytes.</p>
+		<form action="/measure" enctype="multipart/form-data" method="post">
+			<input type="file" name="thisfile"/>
+			<input type="submit" value="Give us that file!"/>
+		</form>
+	
+	</body>
+</html>
