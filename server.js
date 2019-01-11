@@ -1,18 +1,27 @@
-var express = require("express"),
-	path = require("path"),
-	multer = require('multer'),
-	app = express(),
-	upload = multer({ dest: "./uploads/" });
+'use strict';
 
-console.log("Booted!");
+var express = require('express');
+var cors = require('cors');
+var multer = require('multer');
+var upload = multer({ dest: "./uploads/" });
 
-app.get("/", function (req, res) {
-	res.sendfile(path.join(__dirname, "home.html"));
-});
+var app = express();
 
-app.post("/measure", upload.single("thisfile"), function (req, res) {
-	res.send(JSON.stringify({size: req.file.size}));
+app.use(cors());
+app.use('/public', express.static(process.cwd() + '/public'));
+
+app.get('/', function (req, res) {
+     res.sendFile(process.cwd() + '/views/index.html');
+  });
+
+app.post("/api/fileanalyse", upload.single("upfile"), function (req, res) {
+
+	res.send(JSON.stringify({name: req.file.originalname, type: req.file.mimetype, size: req.file.size}));
+
 	res.end();
+
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Node.js listening ...');
+});

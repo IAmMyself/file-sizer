@@ -1,13 +1,27 @@
 {
-  "name": "file-sizing",
-  "version": "1.0.0",
-  "description": "Give this a file and it will return the size in bytes.",
+  "name": "file_metadata",
+  "version": "0.0.1",
+  "description": "API project for freeCodeCamp",
   "main": "server.js",
-  "repository": "",
-  "author": "Mateo Pool",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
-    "express": "~3.2.4",
-    "path": "~0.12.7",
-    "multer": "~1.2.0"
-  }
+    "express": "^5.0.0-alpha.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.1"
+  },
+  "engines": {
+    "node": "4.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://hyperdev.com/#!/project/welcome-project"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "license": "MIT"
 }
